@@ -5,8 +5,8 @@ import importedComponent from "react-imported-component";
 import Home from "./Home";
 import Loading from "./Loading";
 
-const AsyncDynamicPAge = importedComponent(
-  () => import(/* webpackChunkName:'DynamicPage' */ "./Dynamic"),
+const AsyncDynamicPage = importedComponent(
+  () => import(/* webpackChunkName:'DynamicPage' */ "./DynamicPage"),
   {
     LoadingComponent: Loading,
   }
@@ -23,7 +23,7 @@ const App = () => {
     <BrowserRouter basename="">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dynamic" element={<AsyncDynamicPAge />} />
+        <Route path="/dynamic" element={<AsyncDynamicPage />} />
         <Route path="*" element={<AsyncNoMatch />} />
       </Routes>
     </BrowserRouter>
